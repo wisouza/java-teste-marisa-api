@@ -1,7 +1,7 @@
 package br.com.marisa.service;
 
 import br.com.marisa.model.ItemPedidoVO;
-import br.com.marisa.service.exception.MarisaPedidoException;
+import br.com.marisa.exception.MarisaPedidoException;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 

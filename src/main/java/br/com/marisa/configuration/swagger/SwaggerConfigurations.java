@@ -1,4 +1,4 @@
-package br.com.marisa.service.configuration.swagger;
+package br.com.marisa.configuration.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

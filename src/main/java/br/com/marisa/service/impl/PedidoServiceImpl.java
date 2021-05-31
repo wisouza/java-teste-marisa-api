@@ -25,7 +25,7 @@ import br.com.marisa.repository.PedidoRepository;
 import br.com.marisa.service.ItemPedidoService;
 import br.com.marisa.service.PedidoService;
 import br.com.marisa.service.ProdutoService;
-import br.com.marisa.service.exception.MarisaPedidoException;
+import br.com.marisa.exception.MarisaPedidoException;
 import br.com.marisa.util.MensagemConstante;
 import javassist.tools.rmi.ObjectNotFoundException;
 

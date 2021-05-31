@@ -6,7 +6,7 @@ import java.util.Optional;
 import br.com.marisa.model.PedidoVO;
 import br.com.marisa.model.dto.out.PedidoDTO;
 import br.com.marisa.model.form.PedidoForm;
-import br.com.marisa.service.exception.MarisaPedidoException;
+import br.com.marisa.exception.MarisaPedidoException;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 

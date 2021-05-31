@@ -1,4 +1,4 @@
-package br.com.marisa.service.configuration.validation;
+package br.com.marisa.configuration.validation;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import br.com.marisa.model.dto.out.RespostaDTO;
-import br.com.marisa.service.exception.MarisaPedidoException;
+import br.com.marisa.exception.MarisaPedidoException;
 import br.com.marisa.util.MensagemConstante;
 import javassist.tools.rmi.ObjectNotFoundException;
 

@@ -1,4 +1,4 @@
-package br.com.marisa.service.exception;
+package br.com.marisa.exception;
 
 public class MarisaPedidoException extends Exception{
 
