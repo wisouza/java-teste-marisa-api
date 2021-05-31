@@ -17,6 +17,8 @@ public class MensagemConstante {
 
 	public static final String MSG_PEDIDO_JA_FINALIZADO_ANTERIORMENTE = "Pedido já foi finalizado anteriormente";
 
+	public static final String MSG_NAO_POSSIVEL_FINALIZAR_PEDIDO_SEM_ITEM = "Não é possível finalizar um pedido sem item";
+
 	public static final String MSG_PEDIDO_NAO_ENCONTRADO = "Pedido não encontrado";
 
 	public static final String MSG_PRODUTO_NAO_ENCONTRADO = "Produto não encontrado";

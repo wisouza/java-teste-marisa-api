@@ -3,7 +3,7 @@ insert into produto (idproduto, sku, name, stock, is_in_sotck, price) values (2,
 insert into produto (idproduto, sku, name, stock, is_in_sotck, price) values (3, 'S6414902', 'Blusa Regata Feminina Estampa Folhas Alças Finas Marisa', 10, 1, 30.40);
 insert into produto (idproduto, sku, name, stock, is_in_sotck, price) values (4, 'S9763423', 'Blusa Feminina Botões Manga Curta Marisa', 10, 0, 45.50);
 
-insert into pedido (idpedido, finalizado) values (99, 0);
-insert into pedido (idpedido, finalizado) values (100, 1);
+insert into pedido (idpedido, datapedido, finalizado) values (99, sysdate, 0);
+insert into pedido (idpedido, datapedido, finalizado) values (100, sysdate, 1);
 insert into item_pedido (idproduto, idpedido, quantidade) values (1, 100, 5);
-insert into item_pedido (idproduto, idpedido, quantidade) values (2, 100, 5);
+insert into item_pedido (idproduto, idpedido, quantidade) values (3, 100, 5);

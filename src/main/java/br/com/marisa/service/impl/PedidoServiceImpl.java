@@ -68,6 +68,8 @@ public class PedidoServiceImpl implements PedidoService {
 			if (itemPedido.getQuantidade() > itemPedido.getPk().getProdutoVO().getEstoque()) {
 				throw new MarisaPedidoException(MensagemConstante.MSG_QUANTIDADE_INDISPONIVEL_ITEM + itemPedido.getPk().getProdutoVO().getId()
 						+ " - " + itemPedido.getPk().getProdutoVO().getNome());
+			} else if (!itemPedido.getPk().getProdutoVO().isEmEstoque()) {
+				throw new MarisaPedidoException(MensagemConstante.MSG_PRODUTO_INDISPONIVEL + " ID Produto: " + itemPedido.getPk().getProdutoVO().getId());
 			}
 		}
 		
@@ -83,6 +85,8 @@ public class PedidoServiceImpl implements PedidoService {
 	public void finalizar(PedidoVO pedidoVO) throws MarisaPedidoException {
 		if (pedidoVO.isFinalizado()) {
 			throw new MarisaPedidoException(MensagemConstante.MSG_PEDIDO_JA_FINALIZADO_ANTERIORMENTE);
+		} else if (null == pedidoVO.getListItemPedido() || pedidoVO.getListItemPedido().isEmpty()) {
+			throw new MarisaPedidoException(MensagemConstante.MSG_NAO_POSSIVEL_FINALIZAR_PEDIDO_SEM_ITEM);
 		}
 		pedidoVO.setFinalizado(true);
 		pedidoRepository.save(pedidoVO);
@@ -173,7 +177,7 @@ public class PedidoServiceImpl implements PedidoService {
 		Optional<ProdutoVO> produtoVO = produtoService.findById(item.getIdProduto());
 		if(!produtoVO.isPresent()) {
 			throw new ObjectNotFoundException(MensagemConstante.MSG_PRODUTO_NAO_ENCONTRADO + " ID Produto: " + item.getIdProduto());
-		} else if (produtoVO.get().isEmEstoque()) {
+		} else if (!produtoVO.get().isEmEstoque()) {
 			throw new MarisaPedidoException(MensagemConstante.MSG_PRODUTO_INDISPONIVEL + " ID Produto: " + item.getIdProduto());
 		}
 		pk.setPedidoVO(pedidoVO);
